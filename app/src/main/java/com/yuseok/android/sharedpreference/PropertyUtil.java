@@ -42,7 +42,6 @@ public class PropertyUtil {
         try {
             //앱의 내부저장소 / files / test.properties 파일을 저장
             FileOutputStream fos = new FileOutputStream(internalStorage + "/" + PROP_FILE);
-
             prop.store(fos, "comment"); // key = value
 
             // 저장 후 파일을 닫아준다.
@@ -54,7 +53,6 @@ public class PropertyUtil {
 
     public String getProperty(String key) {
         String value = "";
-
         Properties prop = new Properties();
 
         try {
@@ -64,11 +62,8 @@ public class PropertyUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 //        prop.list(System.out); // property목록 전체 나열하기
-
         value = prop.getProperty(key);
-
         return value;
     }
 }
